@@ -35,8 +35,8 @@ class MySpider(scrapy.Spider):
             info_items = info_list.css('li::text').getall()
 
             # We add all the data to the list
-            output_data.append({'Link': link_href, 'Performer(s)': performer_text, 'Date': info_items})
-            self.log(f"Link: {link_href}, Performer(s): {performer_text}, Date: {info_items}")
+            output_data.append({'Link': link_href, 'Performer(s)': performer_text, 'Date(s)': info_items})
+            self.log(f"Link: {link_href}, Performer(s): {performer_text}, Date(s): {info_items}")
 
         # We save the links, months, performer(s) and information to the file
         return output_data
